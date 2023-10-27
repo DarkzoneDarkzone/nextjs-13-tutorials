@@ -95,3 +95,5 @@
 11. install sweetalert2
     command: npm install sweetalert2
 #############################################################
+github: https://github.com/DarkzoneDarkzone/nextjs-13-tutorials
+#############################################################
