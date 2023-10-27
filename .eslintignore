@@ -1,0 +1,8 @@
+# .estlintignore file
+.next
+dist
+node_modules/
+tailwind.config.ts
+postcss.config.js
+next.config.js
+next-env.d.ts

@@ -1,0 +1,97 @@
+#############################################################
+1. install latest node version (current in project is 20.8.1)
+#############################################################
+2. create project with 
+    command: npx create-next-app name-project
+    this project:
+        typescript: yes
+        eslint: yes
+        tailwind css: yes
+        src/ directory: yes
+        App router: yes
+        import allies: yes (@)
+#############################################################
+3. add eslint with 
+    command: npm add eslint --include=dev
+#############################################################
+4. create/update file .eslintrc.json with
+    command: npm init @eslint/config
+    this project:
+        eslint: style
+        module: esm (javascript module)
+        framework: react
+        typescript: yes
+        where to run: browser, node
+        define style: guild
+        which style: standard
+        format: JSON 
+    and select install all of this
+
+    create .eslintignore file
+#############################################################
+5. create folder for structure of project
+    - src/components
+    - src/styles
+    - src/utils
+    - src/hook
+   create file
+    - .env.local
+#############################################################
+6. install redux toolkit with
+    command: npm install @reduxjs/toolkit react-redux
+
+   create folder/file
+    - src/redux
+    - src/redux/features
+    - src/redux/store.tsx ###[ file://./src/redux/store.tsx ]###
+    - src/redux/provider.tsx ###[ file://./src/redux/provider.tsx ]###
+    - src/redux/features/counter
+    - src/redux/features/counter/counterSlice.tsx ###[ file://./src/redux/features/counter/counterSlice.tsx ]###
+#############################################################
+7. import Provider redux to root layout (src/app/layout.tsx) ###[ file://./src/app/layout.tsx ]###
+    import { Providers } from '@/redux/provider'
+    use
+        <Providers>{children}</Providers>
+    instead
+        {children}
+
+    create route for test redux toolkit
+    - src/app/redux-test/page.tsx ###[ file://./src/app/redux-test/page.tsx ]###
+#############################################################
+8. install Material UI with
+    command: npm install @mui/material @mui/styled-engine-sc styled-components @mui/icons-material @emotion/react @emotion/styled
+    **** if error will install more ****
+
+    or
+
+    install ant design -> this project
+    command: npm install antd --save
+#############################################################
+9. set axios interceptor
+    command: npm install axios
+    create file
+    - src/utils/apiAdmin.tsx ###[ file://./src/utils/apiAdmin.tsx ]###
+    - src/utils/apiNayoo.tsx ###[ file://./src/utils/apiNayoo.tsx ]###
+    - src/utils/apiPrivillege.tsx ###[ file://./src/utils/apiPrivillege.tsx ]###
+    - src/utils/apiJson.tsx ###[ file://./src/utils/apiJson.tsx ]###
+#############################################################
+10. install next-auth
+    command: npm install next-auth
+
+    create file 
+    - src/app/api/auth/[...nextauth]/route.ts ###[ file://./src/app/api/auth/[...nextauth]/route.ts ]###
+        * page { signIn: '/auth/signin' } will custom page to credentails to link /auth/signin
+    - src/app/auth/signin/page.tsx ###[ file://./src/app/auth/signin/page.tsx ]###
+        * custom form instead default form credentials
+    - src/app/SessionProviders.tsx ###[ file://./src/app/SessionProviders.tsx ]###
+        * use this provider to cover layouts for use our session in layout
+        * <SessionProviders>
+            <Providers>{children}</Providers>
+          </SessionProviders>
+    - src/services/authService.ts ###[ file://./src/services/authService.ts ]###
+        * this service use for authentication when log in
+    - src/middleware.ts ###[ file://./src/middleware.ts ]###
+#############################################################
+11. install sweetalert2
+    command: npm install sweetalert2
+#############################################################
